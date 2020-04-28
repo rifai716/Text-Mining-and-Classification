@@ -1,6 +1,8 @@
 import ALI.*;
 import helper.FileHelper;
+import model.Item_text_tagging;
 import model.List_berita;
+import model.Text_tagging;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -8,17 +10,30 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        int threshold = 4;
+        /**
+         * -----------------------------------------------------
+         */
+        int threshold = 5;
+        /**
+         * -----------------------------------------------------
+         */
 
+        /**
+         * --------------------------------------
+         * LOAD LIBRARY
+         * --------------------------------------
+         */
         VectorLib vectorLib = new VectorLib();
         TextMiningLib textMiningLib = new TextMiningLib();
 
-        // parent directory
-        String parentDir = "berita/";
-        // get child directory (category of news)
-        ArrayList<String> kategoriDir = FileHelper.getDir(parentDir);
-        // get all file
-        ArrayList<List_berita> list_beritas = new ArrayList<>();
+        /** (1)
+         * --------------------------------------
+         * GET ALL DIRECTORY AND FILE
+         * --------------------------------------
+         */
+        String parentDir = "berita/";                                       // parent directory
+        ArrayList<String> kategoriDir = FileHelper.getDir(parentDir);       // get child directory (category of news)
+        ArrayList<List_berita> list_beritas = new ArrayList<>();            // get all file
         for(String s : kategoriDir){
             list_beritas.add(new List_berita(s, FileHelper.getFile(parentDir+s+"/")));
         }
@@ -29,6 +44,11 @@ public class Main {
         }
 
 
+        /** (2)
+         * --------------------------------------
+         * DATA SPLITING
+         * --------------------------------------
+         */
         Pemisahan_data pemisahanData = new Pemisahan_data(list_beritas, 3);
 
         for(int i = 0; i < list_beritas.size(); i++){
@@ -45,82 +65,57 @@ public class Main {
             }
         }
 
+        /** (3)
+         * --------------------------------------
+         * TEXT MINING
+         * --------------------------------------
+         */
 
-        String berEkonomi;
+        List<Text_tagging> textTaggings = new ArrayList<>();
+
+        String txt;
         String[] words, keywords;
-        Map[] map = new Map[list_beritas.get(0).getFiles().size()];
-        for (int i=0; i<list_beritas.get(0).getFiles().size(); i++){
-            berEkonomi = textMiningLib.readFile(parentDir+list_beritas.get(0).getKategori()+"/"+list_beritas.get(0).getFiles().get(i));
-            //System.out.println(berEkonomi);
-            words = textMiningLib.Tokenizing(berEkonomi);
-            words = textMiningLib.Filtering(words);
-            keywords = textMiningLib.StemmingTagging(words);
-            map[i] = textMiningLib.Scoring(keywords);
-        }
-//        textMiningLib.viewMap(map[0]);
-//        System.out.println(map[0]);
-//        System.out.println(map[0].get("risiko"));
+        Map m = null;
+        ArrayList<String> keyList, tmpKeyList;
+        ArrayList<Integer> valueList, tmpValueList;
+        for(List_berita lb : list_beritas){
+            for(int i = 0; i < lb.getFiles().size(); i++){
+                txt = textMiningLib.readFile(parentDir+lb.getKategori()+"/"+lb.getFiles().get(i));
+                words = textMiningLib.Tokenizing(txt);
+                words = textMiningLib.Filtering(words);
+                keywords = textMiningLib.StemmingTagging(words);
+                // temp list
+                List<Item_text_tagging> litt = new ArrayList<>();
+                tmpKeyList = new ArrayList<>();
+                tmpValueList = new ArrayList<>();
 
-        /**
-         * https://www.baeldung.com/java-merge-maps
-         */
-        Stream combined = null;
-        for(int i = 0; i < 10-1; i++){
-            if(i == 0) combined = Stream.concat(map[i].entrySet().stream(), map[i+1].entrySet().stream());
-            else combined = Stream.concat(combined, map[i+1].entrySet().stream());
-        }
+                m = textMiningLib.Scoring(keywords);
+                //System.out.println(m[i]);
+                keyList = new ArrayList<>(m.keySet());
+                valueList = new ArrayList<>(m.values());
 
-        /**
-         * Ref :
-         * https://www.geeksforgeeks.org/stream-map-java-examples/
-         * https://www.geeksforgeeks.org/collectors-tomap-method-in-java-with-examples/
-         */
-        System.out.println("\n\nDATA GABUNGAN : ");
-        List<String> lstr = (List<String>) combined.map(s -> s.toString()).collect(Collectors.toList());
-        // System.out.println(combined.map(s -> s).collect(Collectors.toList()));
-        System.out.println("Total kata : "+ lstr.size());
-        System.out.println("\n-------------------------------------");
-
-        /**
-         * Proses mengambil kata (word) yang memiliki nilai lebih dari 4 (value_count > 4)
-         */
-        String[] tmp;
-        Map<String, Integer> newData = new HashMap<>();
-        for(String s : lstr){
-            tmp = s.split("=");
-            //System.out.println(tmp[0]+"\t\t\t\t\t\t"+tmp[1]);
-            if(Integer.parseInt(tmp[1]) >= threshold){
-                newData.put(tmp[0], Integer.parseInt(tmp[1]));
+                for(int j = 0; j < keyList.size(); j++){
+                    if(valueList.get(j) >= threshold){
+                        litt.add(new Item_text_tagging(keyList.get(j), valueList.get(j)));
+                        tmpKeyList.add(keyList.get(j));
+                        tmpValueList.add(valueList.get(j));
+                    }
+                }
+                textTaggings.add(new Text_tagging(
+                        lb.getKategori(),
+                        lb.getFiles().get(i),
+                        tmpKeyList,
+                        tmpValueList,
+                        litt)
+                );
             }
         }
-        System.out.println(newData);
-        System.out.println("---------------------------------------\n");
 
-
-        /**
-         * ----------------------------------------
-         * QUERY
-         * ----------------------------------------
-         */
-
-        String query;
-        String[] querylist;
-        Map results;
-        query = "Jakarta Bangkrut";
-        querylist = textMiningLib.Tokenizing(query);
-        querylist = textMiningLib.Filtering(querylist);
-        querylist = textMiningLib.StemmingTagging(querylist);
-
-        vectorLib.view(querylist);
-
-        String[] dokumens = list_beritas.get(0).getFiles().toArray(new String[0]);
-        System.out.println(Arrays.toString(dokumens));
-        results = textMiningLib.Search(querylist, map, dokumens);
-        textMiningLib.viewMap(results);
-
-        String[] rankdocs = textMiningLib.getRetrievedDocs(results);
-        int[] values = textMiningLib.getRetrievedValues(results);
-        vectorLib.view(rankdocs);
-        vectorLib.view(values);
+        for(Text_tagging tt : textTaggings){
+            System.out.println("-----------------------------------\nJUDUL \t\t : " +tt.getJudul());
+            System.out.println("KATEGORI \t : " +tt.getKategori());
+            System.out.println(Arrays.toString(tt.getWords().toArray(new String[0])));
+            System.out.println(Arrays.toString(tt.getValues().toArray(new Integer[0])));
+        }
     }
 }
