@@ -61,6 +61,9 @@ public class Main {
 //        System.out.println(map[0]);
 //        System.out.println(map[0].get("risiko"));
 
+        /**
+         * https://www.baeldung.com/java-merge-maps
+         */
         Stream combined = null;
         for(int i = 0; i < 10-1; i++){
             if(i == 0) combined = Stream.concat(map[i].entrySet().stream(), map[i+1].entrySet().stream());
@@ -74,17 +77,24 @@ public class Main {
          */
         System.out.println("\n\nDATA GABUNGAN : ");
         List<String> lstr = (List<String>) combined.map(s -> s.toString()).collect(Collectors.toList());
-//        System.out.println(combined.map(s -> s).collect(Collectors.toList()));
-
+        // System.out.println(combined.map(s -> s).collect(Collectors.toList()));
         System.out.println("Total kata : "+ lstr.size());
+        System.out.println("\n-------------------------------------");
 
-        // Proses mengambil kata (word) yang memiliki nilai lebih dari 4 (value_count > 4)
+        /**
+         * Proses mengambil kata (word) yang memiliki nilai lebih dari 4 (value_count > 4)
+         */
         String[] tmp;
+        Map<String, Integer> newData = new HashMap<>();
         for(String s : lstr){
             tmp = s.split("=");
-            System.out.println(tmp[0]+"\t\t"+tmp[1]);
+            //System.out.println(tmp[0]+"\t\t\t\t\t\t"+tmp[1]);
+            if(Integer.parseInt(tmp[1]) >= threshold){
+                newData.put(tmp[0], Integer.parseInt(tmp[1]));
+            }
         }
-        System.out.println("--------------------------------\n");
+        System.out.println(newData);
+        System.out.println("---------------------------------------\n");
 
 
         /**
