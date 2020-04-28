@@ -1,0 +1,22 @@
+Liputan6.com, Jakarta - Google baru saja mengumumkan kehadiran situs 'Mengajar dari Rumah' versi Bahasa Indonesia. Situs ini berisi piranti (software), tip, dan materi pelatihan yang ditujukan untuk membantu para pengajar dan siswa melakukan pembelajaran jarak jauh selama pandemi Covid-19.
+
+Inisiatif Google for Education ini juga didukung oleh Kementerian Pendidikan dan Kebudayaan (Kemendikbud). Oleh sebab itu, para pengajar dan siswa dapat mengakses materi di situs resmi 'Mengajar dari Rumah', juga situs 'Bersama Hadapi Korona' dari Kemendikbud.
+
+Google juga telah membantu membuat domain khusus yang bisa mendukung 1,8 juta akun pengajar dan siswa di lebih dari 4.600 sekolah di Jakarta. Dengan domain khusus itu, mereka dapat mengakses G Suite for Education dengan lebih mudah.
+Inisiatif ini juga mendapat sambutan positif Staf Khusus Menteri Pendidikan dan Kebudayaan Bidang Pembelajaran Iwan Syahril. Dia berharap ekosistem pendidikan Indonesia dapat makin terpacu kesiapannya untuk menggunakan teknologi dalam pembelajaran.
+
+"Mengajar dari Rumah adalah pengembangan dari langkah-langkah yang telah kami lakukan untuk mendukung pendidikan jarak jauh, mulai dari menyediakan fitur premium Google Meet secara gratis untuk semua pelanggan G Suite dan G Suite for Eduacation hingga September 2020," tutur Managing Director Google Indonesia Randy Jusuf dalam keterangan resmi yang diterima, Kamis (16/4/2020).
+
+Lebih lanjut Randy juga mengatakan pihaknya turut menyediakan sejumlah pelatihan dan tip yang dapat diakses di YouTube dan YouTube Learning. Ada pula serangkaian webinar yang diharapkan bisa menjangkau 100.000 pengajar dan orang tua mulai bulan ini dan tersedia di platform Guru Berbagi.
+
+"Bersama dengan REFO Indonesia, komunitas Google Grup Pengajar, dan Kemendikbud, kami juga telah meluncurkan serangkaian webinar untuk membantu para pengajar dan orang tua menerapkan strategi pembelajaran jarak jauh menggunakan solusi G Suite for Education," tutur Randy.
+Tidak hanya pendidikan, Google juga sudah menyiapkan sejumlah inisiatif untuk membantu kalangan bisnis Indonesia. Terlebih, menurut Randy, dampak pandemi ini dirasakan oleh lebih dari 50 juta usaha kecil yang menjadi kekuatan ekonomi Indonesia.
+
+Untuk itu, Google baru-baru ini mengumumkan komitmen sebesar USD 800 juta untuk membantu para pengusaha kecil mendapatkan akses ke bantuan finansial, hibah, dan kredit lokal. Selain itu, ada beberapa inisiatif lain yang juga digelar untuk skala lokal, seperti :
+
+Mengalihkan Gapura Digital dan Women Will sepenuhnya ke kelas online. Pelatihan keterampilan digital secara virtual ini digelar setiap Senin sampai Kamis di 14 kota.
+Menyambut 5.455 peserta Digital Entrepreneurship Academy pada pekan ini sebagai bagian dari program Digital Talent Scholarship Kementerian Komunikasi dan Informatika.
+Bekerja sama dengan pemerintah dan Lembaga Swadaya Masyarakat untuk mendukung upaya pemulihan dan pembangunan ketahanan ekonomi masyarakat.
+Menggandakan donasi dari karyawan Google sebesar USD 10 ribu per orang, termasuk melakukan penggalangan dana internal untuk membantu Indorelawan.
+Menyediakan kredit Google API bagi pengembang dan organisasi nonprofit. Selain itu, ada pula Google Ads Grants bagi Kementerian Kesehatan dan Badan Nasional Penanggulangan Bencana (BNPB) dalam upaya penyebaran informasi.
+Menyediakan layanan jaringan penayangan konten dan kredit Google Cloud Platform untuk BNPB agar situs covid19.go.id dapat berjalan dengan stabil. Google Cloud juga menyediakannya untuk Ruangguru dan Tokopedia.

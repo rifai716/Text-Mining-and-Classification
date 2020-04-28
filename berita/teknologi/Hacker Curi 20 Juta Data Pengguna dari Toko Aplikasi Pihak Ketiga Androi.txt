@@ -1,0 +1,18 @@
+Liputan6.com, Jakarta - Selain iOS, Android merupakan salah satu OS smartphone paling populer di dunia saat ini. Pengguna Android pun memiliki akses hampir ke 3 juta aplikasi yang tampil (dan bertambah setiap harinya) di Google Play Store.
+
+Selain Play Store, toko aplikasi Android yang juga terkenal saat ini, termasuk Samsung Galaxy Store dan Huawei AppGallery.
+
+Namun, ada toko aplikasi pihak ketiga lain yang tidak teinstal langsung di ponsel atau dipakai oleh Google, yakni Aptoide.
+Adapun Aptoide sendiri memiliki lebih dari 150 juta pengguna, dan 1 juta aplikasi di dalamnya.
+
+Dikutip dari Forbes, Senin (20/4/2020), seorang hacker mampu mengambil informasi dari 39 juta orang yang menggunakan Aptoide.
+
+Tak hanya itu, hacker yang belum diketahui identitasnya tersebut membagikan 20 juta data--login email dan password--curiannya ke forum hacker populer.
+Lebih lanjut, Aptoide masuk ke dalam database Have I Been Pwned (HIBP) pada 19 April 2020.
+
+Hal ini menunjukkan, sistem keamanan toko aplikasi pihak ketiga tersebut telah dijebol dan informasi dari 20 juta penggunanya dicuri dan dibagikan ke platform hacker.
+
+Selain itu, HIBP juga menyatakan peretasan tersebut sudah terjadi sejak 13 April dengan jumlah akun yang dicuri sebanyak 20.012.235.
+Imbas kabar tersebut, petinggi Aptoide, Filipa Botelho, menyatakan Aptoide telah menjadi korban serangan hacker dan ada kemungkinan pencurian data.
+
+Untuk menanggulangi hal tersebut, perusahaan akan meminta seluruh pengguna untuk mengganti password lama mereka sebagai langkah keamanan.

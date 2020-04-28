@@ -1,0 +1,32 @@
+Liputan6.com, Jakarta Langkah pemerintah meluncurkan aplikasi PeduliLindungi guna menekan penyebaran pandemi Covid-19 dinilai bermanfaat agar masyarakat bisa saling menjaga dan melindungi.
+
+Aplikasi serupa dengan mekanisme yang sama juga sudah digunakan secara efektif di negara lain, seperti Singapura, yang dinilai berhasil membantu mengendalikan penyebaran virus Corona.
+
+Aplikasi ini mengharuskan pengguna untuk mengaktifkan fungsi Bluetooth dan GPS untuk merekam informasi yang dibutuhkan.
+
+Ketika ada perangkat lain dalam radius Bluetooth yang juga terdaftar di PeduliLindungi, maka akan terjadi pertukaran id anonim yang akan direkam oleh gadget masing-masing.
+PeduliLindungi selanjutnya akan mengidentifikasi orang-orang yang pernah berada dalam jarak dekat dengan orang yang dinyatakan positif Covid-19 atau PDP (Pasien Dalam Pengawasan) dan ODP (Orang Dalam Pengawasan).
+
+Hal ini akan sangat membantu ketika orang tersebut tidak dapat mengingat riwayat perjalanan dan dengan siapa saja dia melakukan kontak. Pertanyaannya, apakah data pengguna aman?
+
+Sekretaris Indonesia Cyber Security Forum (ICSF), Satriyo Wibowo, mengatakan aplikasi PeduliLindungi jaminan keamanannya karena banyak pihak terlibat, terutama dari pemerintah dan ada juga dukungan dari operator seperti Telkom.
+
+"Hal yang pasti developer dan server di Telkom, jadi datanya (disimpan) lokal. Saran saya ditingkatkan user experience lebih friendly dengan feedback langsung terlihat nyata di halaman awal," ujar Satriyo melalui keterangannya, Sabtu (18/4/2020).
+Sementara Praktisi Keamanan Siber Mochammad James Falahuddin menyatakan kalau dari sisi keamanan, aplikasi PeduliLindungi sudah berhasil lolos masuk AppStore.
+
+"Masuk AppStore itu tandanya untuk isu keamanan sudah baik. Apple itu tak sembarangan review keamanan aplikasi bagi penggunanya. Mereka tak mandang jabatan atau instansi," ucapnya.
+
+Ia memaparkan, untuk bisa published di AppStore setiap aplikasi, apalagi yang mengeksploitasi fungsi location dan Bluetooth, pasti akan di scrutinize oleh Tim Verifikasi Apple secara detail, untuk memastikan aplikasi tidak melakukan abuse terhadap dua fungsi itu yang bisa berakibat terhadap kebocoran data pengguna.
+
+Proses verifikasi di AppStore sendiri bisa berlangsung cukup lama, sebelum satu aplikasi lolos untuk di-publish.
+
+"Jadi, harusnya kekhawatiran terhadap penyalahgunaan fitur di aplikasi PeduliLindungi ini bisa diminimalisir selama kita menginstal dari jalur yang benar, yakni Play Store dan App Store," katanya.
+Kementerian Komunikasi dan Informatika (Kemkominfo) telah membantah informasi hoaks terkait aplikasi Peduli Lindungi yang dianggap membahayakan penggunanya.
+
+"Kami pastikan bahwa berita itu tidak benar karena aplikasi PeduliLindungi saat ini sudah dapat diunduh melalui App Store dan Play Store untuk versi iOS dan Android dan tidak melalui APK sehingga sangat secure dari phishing dan malware," tulis Kemkominfo melalui siaran pers.
+
+Saat ini tidak kurang 1 juta pengguna telah menginstal PeduliLindungi untuk memutus mata rantai penyebaran Covid-19. Aplikasi ini sendiri telah ditetapkan dengan Keputusan Menteri Kominfo No. 171 Tahun 2020.
+
+Diharapkan semua masyarakat dapat menggunakan aplikasi PeduliLIndungi karena ini ditujukan untuk kepentingan masyarakat agar saling melindungi.
+
+Masyarakat diimbau untuk menjadi pengguna aplikasi PeduliLundingi, karena semakin banyak yang menginstal, maka kian masif upaya kita dalam memutus mata rantai Covid-19 dengan harapan kondisi dapat segera kembali normal.

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ALI-16.04.20">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Libraries/ALI-16.04.20.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

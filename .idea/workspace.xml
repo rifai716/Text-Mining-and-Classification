@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0394cef6-52c9-4c71-8b20-1ee72aaa8750" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bAGaplT8QyKFtwHrWyVzjWzBZO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Libraries/ALI-16.04.20.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="NLP" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0394cef6-52c9-4c71-8b20-1ee72aaa8750" name="Default Changelist" comment="" />
+      <created>1588067550809</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588067550809</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="768" y="254" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1588083504100">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state x="768" y="254" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1017@0.27.1920.1017" timestamp="1588083504100" />
+    <state x="1025" y="282" width="735" height="520" key="FileChooserDialogImpl" timestamp="1588067635150">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state x="1025" y="282" width="735" height="520" key="FileChooserDialogImpl/0.27.1920.1017@0.27.1920.1017" timestamp="1588067635150" />
+    <state width="1874" height="368" key="GridCell.Tab.0.bottom" timestamp="1588090681577">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="368" key="GridCell.Tab.0.bottom/0.27.1920.1017@0.27.1920.1017" timestamp="1588090681577" />
+    <state width="1874" height="368" key="GridCell.Tab.0.center" timestamp="1588090681577">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="368" key="GridCell.Tab.0.center/0.27.1920.1017@0.27.1920.1017" timestamp="1588090681577" />
+    <state width="1874" height="368" key="GridCell.Tab.0.left" timestamp="1588090681577">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="368" key="GridCell.Tab.0.left/0.27.1920.1017@0.27.1920.1017" timestamp="1588090681577" />
+    <state width="1874" height="368" key="GridCell.Tab.0.right" timestamp="1588090681577">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="368" key="GridCell.Tab.0.right/0.27.1920.1017@0.27.1920.1017" timestamp="1588090681577" />
+    <state width="1874" height="326" key="GridCell.Tab.1.bottom" timestamp="1588081515483">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="326" key="GridCell.Tab.1.bottom/0.27.1920.1017@0.27.1920.1017" timestamp="1588081515483" />
+    <state width="1874" height="326" key="GridCell.Tab.1.center" timestamp="1588081515483">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="326" key="GridCell.Tab.1.center/0.27.1920.1017@0.27.1920.1017" timestamp="1588081515483" />
+    <state width="1874" height="326" key="GridCell.Tab.1.left" timestamp="1588081515482">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="326" key="GridCell.Tab.1.left/0.27.1920.1017@0.27.1920.1017" timestamp="1588081515482" />
+    <state width="1874" height="326" key="GridCell.Tab.1.right" timestamp="1588081515483">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state width="1874" height="326" key="GridCell.Tab.1.right/0.27.1920.1017@0.27.1920.1017" timestamp="1588081515483" />
+    <state x="886" y="113" width="1024" height="852" key="SettingsEditor" timestamp="1588067642720">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state x="886" y="113" width="1024" height="852" key="SettingsEditor/0.27.1920.1017@0.27.1920.1017" timestamp="1588067642720" />
+    <state x="623" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1588075204590">
+      <screen x="0" y="27" width="1920" height="1017" />
+    </state>
+    <state x="623" y="250" width="672" height="678" key="search.everywhere.popup/0.27.1920.1017@0.27.1920.1017" timestamp="1588075204590" />
+  </component>
+</project>
