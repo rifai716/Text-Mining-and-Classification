@@ -1,10 +1,8 @@
 import ALI.*;
-import helper.FileHelper;
-import model.Item_text_tagging;
+import helper.Helper;
 import model.List_berita;
 import model.Text_tagging;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -35,10 +33,10 @@ public class Main {
          * --------------------------------------
          */
         String parentDir = "berita/";                                       // parent directory
-        ArrayList<String> kategoriDir = FileHelper.getDir(parentDir);       // get child directory (category of news)
+        ArrayList<String> kategoriDir = Helper.getDir(parentDir);       // get child directory (category of news)
         ArrayList<List_berita> list_beritas = new ArrayList<>();            // get all file
         for(String s : kategoriDir){
-            list_beritas.add(new List_berita(s, FileHelper.getFile(parentDir+s+"/")));
+            list_beritas.add(new List_berita(s, Helper.getFile(parentDir+s+"/")));
         }
 
         for(List_berita lb : list_beritas){
@@ -101,26 +99,55 @@ public class Main {
         // MEMBUAT DATA TRAINING
         List<Text_tagging> textTaggingsTraining = TextMining.stemmingTagging(pemisahanData.getTraining(), parentDir, threshold);
 
-        FileWriter writer = null;
-        try {
-            writer = new FileWriter("training.csv");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        StringBuffer sb = new StringBuffer();
-        for(Text_tagging tg : textTaggingsTraining){
-            String collect = tg.getWords().stream().collect(Collectors.joining(","));
-            sb.append(collect);
-            sb.append("\n");
-        }
-
-        try {
-            writer.write(sb.toString());
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        DataMaker.run(wordsAllArticles.keySet(), textTaggingsTraining, "training.csv");
+//        FileWriter writer = null;
+//        try {
+//            writer = new FileWriter("training.csv");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        StringBuffer sb = new StringBuffer();
+//
+//        // add header
+//        sb.append("title;");
+//        sb.append(wordsAllArticles.keySet().stream().collect(Collectors.joining(";")));
+//        sb.append(";label\n");
+//
+//        for(Text_tagging tg : textTaggingsTraining){
+//            ArrayList<String> v = new ArrayList<>();
+//            v.add(tg.getJudul());
+//            for(String s : wordsAllArticles.keySet()){
+//                boolean isThere = false;
+//                for(String tgs : tg.getWords()){
+//                    if(s.equalsIgnoreCase(tgs)){
+//                        isThere = true;
+//                        break;
+//                    }
+//                }
+//
+//                int idx = Helper.getIndex(tg.getWords(), s);
+//                if(idx == 999999){
+//                    // data not found
+//                    v.add("0");
+//                } else {
+//                    v.add(String.valueOf(tg.getValues().get(idx)));
+//                }
+//            }
+//            v.add(tg.getKategori());
+//
+//            // add body
+//            String collect = v.stream().collect(Collectors.joining(";"));
+//            sb.append(collect);
+//            sb.append("\n");
+//        }
+//
+//        try {
+//            writer.write(sb.toString());
+//            writer.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         // MEMBUAT DATA TESTING
         List<Text_tagging> textTaggingsTesting = TextMining.stemmingTagging(pemisahanData.getTesting(), parentDir, threshold);

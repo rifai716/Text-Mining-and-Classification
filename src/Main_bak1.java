@@ -1,6 +1,6 @@
 import ALI.TextMiningLib;
 import ALI.VectorLib;
-import helper.FileHelper;
+import helper.Helper;
 import model.List_berita;
 
 import java.util.*;
@@ -17,11 +17,11 @@ public class Main_bak1 {
         // parent directory
         String parentDir = "berita/";
         // get child directory (category of news)
-        ArrayList<String> kategoriDir = FileHelper.getDir(parentDir);
+        ArrayList<String> kategoriDir = Helper.getDir(parentDir);
         // get all file
         ArrayList<List_berita> list_beritas = new ArrayList<>();
         for(String s : kategoriDir){
-            list_beritas.add(new List_berita(s, FileHelper.getFile(parentDir+s+"/")));
+            list_beritas.add(new List_berita(s, Helper.getFile(parentDir+s+"/")));
         }
 
         for(List_berita lb : list_beritas){
