@@ -8,7 +8,7 @@ public class Pemisahan_data {
     private List<List_berita> datas;
     private List<List_berita> training = new ArrayList<>();
     private List<List_berita> testing = new ArrayList<>();
-    private int num_test = 3;
+    private int num_test = 3; // DEFAULT
 
     public Pemisahan_data(List<List_berita> datas, int num_test) {
         this.datas = datas;

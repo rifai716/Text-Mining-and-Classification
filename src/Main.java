@@ -97,60 +97,20 @@ public class Main {
         System.out.println(wordsAllArticles.keySet());
 
         // MEMBUAT DATA TRAINING
-        List<Text_tagging> textTaggingsTraining = TextMining.stemmingTagging(pemisahanData.getTraining(), parentDir, threshold);
-
+        List<Text_tagging> textTaggingsTraining = TextMining.stemmingTagging(
+                pemisahanData.getTraining(),
+                parentDir,
+                threshold
+        );
         DataMaker.run(wordsAllArticles.keySet(), textTaggingsTraining, "training.csv");
-//        FileWriter writer = null;
-//        try {
-//            writer = new FileWriter("training.csv");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        StringBuffer sb = new StringBuffer();
-//
-//        // add header
-//        sb.append("title;");
-//        sb.append(wordsAllArticles.keySet().stream().collect(Collectors.joining(";")));
-//        sb.append(";label\n");
-//
-//        for(Text_tagging tg : textTaggingsTraining){
-//            ArrayList<String> v = new ArrayList<>();
-//            v.add(tg.getJudul());
-//            for(String s : wordsAllArticles.keySet()){
-//                boolean isThere = false;
-//                for(String tgs : tg.getWords()){
-//                    if(s.equalsIgnoreCase(tgs)){
-//                        isThere = true;
-//                        break;
-//                    }
-//                }
-//
-//                int idx = Helper.getIndex(tg.getWords(), s);
-//                if(idx == 999999){
-//                    // data not found
-//                    v.add("0");
-//                } else {
-//                    v.add(String.valueOf(tg.getValues().get(idx)));
-//                }
-//            }
-//            v.add(tg.getKategori());
-//
-//            // add body
-//            String collect = v.stream().collect(Collectors.joining(";"));
-//            sb.append(collect);
-//            sb.append("\n");
-//        }
-//
-//        try {
-//            writer.write(sb.toString());
-//            writer.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
         // MEMBUAT DATA TESTING
-        List<Text_tagging> textTaggingsTesting = TextMining.stemmingTagging(pemisahanData.getTesting(), parentDir, threshold);
+        List<Text_tagging> textTaggingsTesting = TextMining.stemmingTagging(
+                pemisahanData.getTesting(),
+                parentDir,
+                threshold
+        );
+        DataMaker.run(wordsAllArticles.keySet(), textTaggingsTesting, "testing.csv");
 
     }
 }
