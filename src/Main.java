@@ -4,6 +4,9 @@ import model.Item_text_tagging;
 import model.List_berita;
 import model.Text_tagging;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -71,51 +74,56 @@ public class Main {
          * --------------------------------------
          */
 
-        List<Text_tagging> textTaggings = new ArrayList<>();
+        // ALL DATA
+        // GABUNGKAN SELURUH "KATA" MENJADI SATU KESATUAN
+        List<Text_tagging> textTaggingAllData = TextMining.stemmingTagging(list_beritas, parentDir, threshold);
 
-        String txt;
-        String[] words, keywords;
-        Map m = null;
-        ArrayList<String> keyList, tmpKeyList;
-        ArrayList<Integer> valueList, tmpValueList;
-        for(List_berita lb : list_beritas){
-            for(int i = 0; i < lb.getFiles().size(); i++){
-                txt = textMiningLib.readFile(parentDir+lb.getKategori()+"/"+lb.getFiles().get(i));
-                words = textMiningLib.Tokenizing(txt);
-                words = textMiningLib.Filtering(words);
-                keywords = textMiningLib.StemmingTagging(words);
-                // temp list
-                List<Item_text_tagging> litt = new ArrayList<>();
-                tmpKeyList = new ArrayList<>();
-                tmpValueList = new ArrayList<>();
-
-                m = textMiningLib.Scoring(keywords);
-                //System.out.println(m[i]);
-                keyList = new ArrayList<>(m.keySet());
-                valueList = new ArrayList<>(m.values());
-
-                for(int j = 0; j < keyList.size(); j++){
-                    if(valueList.get(j) >= threshold){
-                        litt.add(new Item_text_tagging(keyList.get(j), valueList.get(j)));
-                        tmpKeyList.add(keyList.get(j));
-                        tmpValueList.add(valueList.get(j));
-                    }
-                }
-                textTaggings.add(new Text_tagging(
-                        lb.getKategori(),
-                        lb.getFiles().get(i),
-                        tmpKeyList,
-                        tmpValueList,
-                        litt)
-                );
-            }
-        }
-
-        for(Text_tagging tt : textTaggings){
+        Stream combined = null;
+        int i = 0;
+        for(Text_tagging tt : textTaggingAllData){
             System.out.println("-----------------------------------\nJUDUL \t\t : " +tt.getJudul());
             System.out.println("KATEGORI \t : " +tt.getKategori());
             System.out.println(Arrays.toString(tt.getWords().toArray(new String[0])));
             System.out.println(Arrays.toString(tt.getValues().toArray(new Integer[0])));
+            if(i == 0) {
+                combined = tt.getWords().stream();
+            } else {
+                combined = Stream.concat(combined, tt.getWords().stream());
+            }
+            i++;
         }
+        System.out.println("\n\n--------------------\n HASIL PENGGABUNGAN \n--------------------\n");
+        List<String> lstr = (List<String>) combined.map(s -> s.toString()).collect(Collectors.toList());
+        Map<String, Long> wordsAllArticles = lstr.stream().collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+        System.out.println("TOTAL KATA \t"+ wordsAllArticles.keySet().size());
+        System.out.println(wordsAllArticles.keySet());
+
+        // MEMBUAT DATA TRAINING
+        List<Text_tagging> textTaggingsTraining = TextMining.stemmingTagging(pemisahanData.getTraining(), parentDir, threshold);
+
+        FileWriter writer = null;
+        try {
+            writer = new FileWriter("training.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        StringBuffer sb = new StringBuffer();
+        for(Text_tagging tg : textTaggingsTraining){
+            String collect = tg.getWords().stream().collect(Collectors.joining(","));
+            sb.append(collect);
+            sb.append("\n");
+        }
+
+        try {
+            writer.write(sb.toString());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // MEMBUAT DATA TESTING
+        List<Text_tagging> textTaggingsTesting = TextMining.stemmingTagging(pemisahanData.getTesting(), parentDir, threshold);
+
     }
 }
